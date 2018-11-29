@@ -59,7 +59,9 @@ public class PlayerHealth : MonoBehaviour
 
         if(currentHealth <= 0 && !isDead)
         {
-            Death ();
+            var healthColor = GameObject.Find("Fill").GetComponent<Image>().color;
+            GameObject.Find("Fill").GetComponent<Image>().color = new Color(healthColor.r, healthColor.g, healthColor.b, 0);
+            Death();
         }
     }
 

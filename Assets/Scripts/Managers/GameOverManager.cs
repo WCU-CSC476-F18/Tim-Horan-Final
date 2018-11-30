@@ -4,7 +4,7 @@ public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
 
-
+    public GameObject gameOverText;
     Animator anim;
 
 
@@ -18,7 +18,12 @@ public class GameOverManager : MonoBehaviour
     {
         if (playerHealth.currentHealth <= 0)
         {
+            gameOverText.SetActive(true);
             anim.SetTrigger("GameOver");
+        }
+        else
+        {
+            gameOverText.SetActive(false);
         }
     }
 }

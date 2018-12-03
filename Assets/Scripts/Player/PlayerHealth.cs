@@ -46,6 +46,19 @@ public class PlayerHealth : MonoBehaviour
         damaged = false;
     }
 
+    public void Heal()
+    {
+        if (currentHealth >= 50)
+        {
+            currentHealth = 100;
+            healthSlider.value = currentHealth;
+        }
+        else
+        {
+            currentHealth += 50;
+            healthSlider.value = currentHealth;
+        }
+    }
 
     public void TakeDamage (int amount)
     {

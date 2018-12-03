@@ -9742,6 +9742,12 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  slomoPrefab: {fileID: 1461885967713876, guid: 969c4fbab04736d49bf053b4fe686984,
+    type: 2}
+  minigunPrefab: {fileID: 1033070004797786, guid: ba961fc4046c6d943bfa742314be294d,
+    type: 2}
+  sniperPrefab: {fileID: 1640471535578024, guid: 08cec62b889f5c842b25e98d848f10e4,
+    type: 2}
 --- !u!114 &114204792263613050
 MonoBehaviour:
   m_ObjectHideFlags: 1

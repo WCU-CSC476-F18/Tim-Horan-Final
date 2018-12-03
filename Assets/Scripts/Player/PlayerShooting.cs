@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
     public float range = 100f;
 
 
-    float timer;
+    float timer, minigunTimer, sniperTimer, slomoTimer;
     Ray shootRay = new Ray();
     RaycastHit shootHit;
     int shootableMask;
@@ -17,6 +18,10 @@ public class PlayerShooting : MonoBehaviour
     Light gunLight;
     float effectsDisplayTime = 0.2f;
 
+    public bool minigun = false, sniper = false, slomo = false;
+
+    public GameObject sniperText, minigunText, slomoText;
+    public Slider sniperSlider, minigunSlider, slomoSlider;
 
     void Awake ()
     {
@@ -31,6 +36,13 @@ public class PlayerShooting : MonoBehaviour
     void Update ()
     {
         timer += Time.deltaTime;
+
+        if (minigun)
+            Minigun();
+        else if (sniper)
+            Sniper();
+        else if (slomo)
+            Slomo();
 
 		if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
         {
@@ -50,6 +62,63 @@ public class PlayerShooting : MonoBehaviour
         gunLight.enabled = false;
     }
 
+    private void Slomo()
+    {
+        if (slomoTimer >= 0)
+        {
+            slomoText.SetActive(true);
+            slomoTimer -= Time.deltaTime;
+            slomoSlider.value = slomoTimer;
+        }
+        else
+        {
+            slomoText.SetActive(false);
+            slomo = false;
+        }
+    }
+
+    public void ResetTimers()
+    {
+        minigunTimer = 10f;
+        sniperTimer = 10f;
+        slomoTimer = 10f;
+    }
+
+    private void Minigun()
+    {
+        if(minigunTimer >= 0)
+        {
+            minigunText.SetActive(true);
+            timeBetweenBullets = 0.05f;
+            minigunTimer -= Time.deltaTime;
+            minigunSlider.value = minigunTimer;
+        }
+        else
+        {
+            timeBetweenBullets = 0.15f;
+            minigunText.SetActive(false);
+            minigun = false;
+        }
+    }
+
+    private void Sniper()
+    {
+        if (sniperTimer >= 0)
+        {
+            sniperText.SetActive(true);
+            timeBetweenBullets = 0.3f;
+            damagePerShot = 60;
+            sniperTimer -= Time.deltaTime;
+            sniperSlider.value = sniperTimer;
+        }
+        else
+        {
+            timeBetweenBullets = 0.15f;
+            damagePerShot = 20;
+            sniperText.SetActive(false);
+            sniper = false;
+        }
+    }
 
     void Shoot ()
     {

@@ -16,7 +16,7 @@ public class SniperPickup : MonoBehaviour {
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 

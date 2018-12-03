@@ -16,7 +16,7 @@ public class MinigunPickup : MonoBehaviour {
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 

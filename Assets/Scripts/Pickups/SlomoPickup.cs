@@ -4,20 +4,70 @@ using UnityEngine;
 
 public class SlomoPickup : MonoBehaviour {
 
-    private float timer = 20;
+    private float timer = 15;
+    public Light bgLight;
 
     void Update()
     {
         this.transform.Rotate(new Vector3(0, 1, 0));
 
-        if(timer >= 0)
+        if (timer >= 0)
         {
             timer -= Time.deltaTime;
         }
+
+        if (timer >= 5)
+            LightOn();
+        else if (timer >= 4)
+            LightOff();
+        else if (timer >= 3.5)
+            LightOn();
+        else if (timer >= 3)
+            LightOff();
+        else if (timer >= 2.5)
+            LightOn();
+        else if (timer >= 2)
+            LightOff();
+        else if (timer >= 1.75)
+            LightOn();
+        else if (timer >= 1.5)
+            LightOff();
+        else if (timer >= 1.25)
+            LightOn();
+        else if (timer >= 1)
+            LightOff();
+        else if (timer >= .9)
+            LightOn();
+        else if (timer >= .8)
+            LightOff();
+        else if (timer >= .7)
+            LightOn();
+        else if (timer >= .6)
+            LightOff();
+        else if (timer >= .5)
+            LightOn();
+        else if (timer >= .4)
+            LightOff();
+        else if (timer >= .3)
+            LightOn();
+        else if (timer >= .2)
+            LightOff();
+        else if (timer >= .1)
+            LightOn();
         else
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void LightOn()
+    {
+        bgLight.enabled = true;
+    }
+
+    private void LightOff()
+    {
+        bgLight.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)

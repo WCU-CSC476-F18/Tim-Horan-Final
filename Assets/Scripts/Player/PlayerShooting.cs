@@ -23,6 +23,8 @@ public class PlayerShooting : MonoBehaviour
     public GameObject sniperText, minigunText, slomoText, grenadePrefab, spawnedGrenade;
     public Slider sniperSlider, minigunSlider, slomoSlider;
 
+    public Material red, normal;
+
     void Awake ()
     {
         shootableMask = LayerMask.GetMask ("Shootable");
@@ -143,6 +145,19 @@ public class PlayerShooting : MonoBehaviour
         timer = 0f;
 
         gunAudio.Play ();
+
+        if(minigun)
+        {
+            gunLight.color = Color.red;
+            gunLine.material = red;
+            gunParticles.startColor = Color.red;
+        }
+        else
+        {
+            gunLight.color = Color.yellow;
+            gunLine.material = normal;
+            gunParticles.startColor = Color.yellow;
+        }
 
         gunLight.enabled = true;
 

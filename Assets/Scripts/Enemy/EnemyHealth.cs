@@ -60,13 +60,16 @@ public class EnemyHealth : MonoBehaviour
 
     void Death ()
     {
-        int rand = Random.Range(1, 100);
-        if (rand <= 2)
-            Instantiate(slomoPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        else if (rand <= 4)
-            Instantiate(minigunPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        else if (rand <= 6)
-            Instantiate(sniperPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        if (this.name == "Hellephant")
+        {
+            int rand = Random.Range(1, 4);
+            if (rand == 1)
+                Instantiate(slomoPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            else if (rand == 2)
+                Instantiate(minigunPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            else
+                Instantiate(sniperPrefab).transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        }
 
         isDead = true;
 

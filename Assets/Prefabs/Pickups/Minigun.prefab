@@ -178,7 +178,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9da78a674f499d54580b0c6af73a8b43, type: 2}
+  - {fileID: 2100000, guid: e735a2baaf6c7814dbbfb957a1e0de67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -229,7 +229,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 1, b: 0.4047978, a: 1}
+  m_Color: {r: 1, g: 0.007604747, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 3
   m_SpotAngle: 30
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153c372ab675de3488c3ec175ddb8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgLight: {fileID: 108945189547844880}
 --- !u!136 &136534677565262442
 CapsuleCollider:
   m_ObjectHideFlags: 1

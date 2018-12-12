@@ -126,15 +126,13 @@ public class PlayerShooting : MonoBehaviour
         if (sniperTimer >= 0)
         {
             sniperText.SetActive(true);
-            timeBetweenBullets = 0.3f;
-            damagePerShot = 60;
+            timeBetweenBullets = 0.75f;
             sniperTimer -= Time.deltaTime;
             sniperSlider.value = sniperTimer;
         }
         else
         {
             timeBetweenBullets = 0.15f;
-            damagePerShot = 20;
             sniperText.SetActive(false);
             sniper = false;
         }
@@ -157,18 +155,33 @@ public class PlayerShooting : MonoBehaviour
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
 
-        if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
+        if (sniper)
         {
-            EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
-            if(enemyHealth != null)
+            RaycastHit[] hits = Physics.RaycastAll(shootRay.origin, shootRay.direction, range);
+            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            for (int i = 0; i < hits.Length; i++)
             {
-                enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+                if(hits[i].transform.tag == "Enemy")
+                {
+                    hits[i].transform.gameObject.GetComponent<EnemyHealth>().TakeDamage(100, hits[i].transform.position);
+                }
             }
-            gunLine.SetPosition (1, shootHit.point);
         }
         else
         {
-            gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+            if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
+            {
+                EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(damagePerShot, shootHit.point);
+                }
+                gunLine.SetPosition(1, shootHit.point);
+            }
+            else
+            {
+                gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            }
         }
     }
 }

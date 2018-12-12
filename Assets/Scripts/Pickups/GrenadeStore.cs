@@ -26,10 +26,10 @@ public class GrenadeStore : MonoBehaviour
             GameObject player = other.gameObject;
             if (player.GetComponentInChildren<PlayerShooting>().hasGrenade == false)
             {
-                if (ScoreManager.score >= 300)
+                if (ScoreManager.points >= 300)
                 {
                     player.GetComponentInChildren<PlayerShooting>().hasGrenade = true;
-                    ScoreManager.score -= 300;
+                    ScoreManager.points -= 300;
                     grenadeCount.text = "1";
                 }
                 else

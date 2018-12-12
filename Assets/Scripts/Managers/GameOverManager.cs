@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -13,12 +14,27 @@ public class GameOverManager : MonoBehaviour
     private bool waves;
     private int maxEnemies = 20;
     public static bool play = true;
-    private float downTimer = 0;
+    private float downTimer = 5;
     public static int waveNumber = 1, enemiesLeft = 20;
+
+    public Text waveNumText, enemiesLeftText, downTimerText, scoreText;
 
     void Awake()
     {
         waves = MainMenuController.waves;
+
+        if(!waves)
+        {
+            waveNumText.text = "";
+            enemiesLeftText.text = "";
+            scoreText.text = "Score: 0";
+        }
+        else
+        {
+            scoreText.text = "";
+            waveNumText.text = "Wave: 1";
+            enemiesLeftText.text = "Enemies Left: 20";
+        }
 
         anim = GetComponent<Animator>();
 
@@ -56,17 +72,26 @@ public class GameOverManager : MonoBehaviour
                 play = false;
                 if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
                 {
-                    downTimer += Time.deltaTime;
-                    if(downTimer >= 5)
+                    downTimer -= Time.deltaTime;
+                    downTimerText.text = "Time Until Next Wave: " + (int)downTimer + "s";
+                    if(downTimer <= 0)
                     {
                         play = true;
                         EnemyManager.enemiesSpawned = 0;
                         maxEnemies = (int) (maxEnemies * 1.75f);
                         enemiesLeft = maxEnemies;
-                        downTimer = 0;
+                        downTimer = 5;
+                        waveNumber++;
+                        downTimerText.text = "";
                     }
                 }
             }
+            waveNumText.text = "Wave: " + waveNumber;
+            enemiesLeftText.text = "Enemies Left: " + enemiesLeft;
+        }
+        else
+        {
+            scoreText.text = "Score: " + ScoreManager.score;
         }
 
         if (playerHealth.currentHealth <= 0)

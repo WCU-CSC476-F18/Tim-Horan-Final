@@ -22,10 +22,10 @@ public class HealthPickup : MonoBehaviour {
             GameObject player = other.gameObject;
             if (player.GetComponent<PlayerHealth>().currentHealth < 100)
             {
-                if (ScoreManager.score >= 100)
+                if (ScoreManager.points >= 100)
                 {
                     player.GetComponent<PlayerHealth>().Heal();
-                    ScoreManager.score -= 100;
+                    ScoreManager.points -= 100;
                 }
                 else
                 {

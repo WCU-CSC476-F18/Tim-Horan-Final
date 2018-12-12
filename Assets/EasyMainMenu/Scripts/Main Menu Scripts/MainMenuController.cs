@@ -18,7 +18,7 @@ public class MainMenuController : MonoBehaviour {
     public GameObject GfxPanel;
     public GameObject LoadGamePanel;
 
-    public static bool waves = true;
+    public static bool waves = false;
 
     // Use this for initialization
     void Start () {

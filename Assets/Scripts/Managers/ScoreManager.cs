@@ -4,21 +4,20 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int score;
-
-
+    public static int points, score;
+    
     Text text;
-
 
     void Awake ()
     {
         text = GetComponent <Text> ();
+        points = 0;
         score = 0;
     }
 
 
     void Update ()
     {
-        text.text = "Points: " + score;
+        text.text = "Points: " + points;
     }
 }

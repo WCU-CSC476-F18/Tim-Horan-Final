@@ -147,6 +147,75 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &37732482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37732483}
+  - component: {fileID: 37732485}
+  - component: {fileID: 37732484}
+  m_Layer: 5
+  m_Name: Grenade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &37732483
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37732482}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 374623157}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -43.53, y: 17}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &37732484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37732482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: e9050b5e17854e94f805e9a026addb18, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &37732485
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37732482}
+  m_CullTransparentMesh: 0
 --- !u!1 &92964624
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +952,8 @@ RectTransform:
   - {fileID: 421781818}
   - {fileID: 816080055}
   - {fileID: 1934600573}
+  - {fileID: 37732483}
+  - {fileID: 1200058048}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2123,6 +2194,11 @@ Prefab:
       objectReference: {fileID: 254879140}
     - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
         type: 2}
+      propertyPath: slomoText
+      value: 
+      objectReference: {fileID: 934437956}
+    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
+        type: 2}
       propertyPath: sniperSlider
       value: 
       objectReference: {fileID: 646427903}
@@ -2131,6 +2207,16 @@ Prefab:
       propertyPath: minigunSlider
       value: 
       objectReference: {fileID: 2069042854}
+    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
+        type: 2}
+      propertyPath: slomoSlider
+      value: 
+      objectReference: {fileID: 983479987}
+    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
+        type: 2}
+      propertyPath: grenadeCount
+      value: 
+      objectReference: {fileID: 1200058049}
     - target: {fileID: 114981717707784412, guid: 37c45c067244ea74cbebce7b7864f5fd,
         type: 2}
       propertyPath: healthSlider
@@ -2141,42 +2227,6 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 1968148255}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: slomoText
-      value: 
-      objectReference: {fileID: 934437956}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: slomoSlider
-      value: 
-      objectReference: {fileID: 983479987}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: grenadePrefab
-      value: 
-      objectReference: {fileID: 1669218690497920, guid: 417e6fd6b6ccd294f95eea4584fea38a,
-        type: 2}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: hasGrenade
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82952683985707790, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: red
-      value: 
-      objectReference: {fileID: 2100000, guid: e735a2baaf6c7814dbbfb957a1e0de67, type: 2}
-    - target: {fileID: 114815167307188304, guid: 37c45c067244ea74cbebce7b7864f5fd,
-        type: 2}
-      propertyPath: normal
-      value: 
-      objectReference: {fileID: 2100000, guid: 007cd3dce0e6539409edcc484011c877, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c45c067244ea74cbebce7b7864f5fd, type: 2}
   m_IsPrefabAsset: 0
@@ -2407,22 +2457,6 @@ Transform:
   m_Father: {fileID: 198178069}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1100459444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1637822998261916, guid: d5031b2347cdfda4da096342b5398fa3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1890709378}
---- !u!114 &1100459445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1100459444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d25012ffb690a449ab373b82ec05dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1119904554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,6 +2803,81 @@ Transform:
   m_Father: {fileID: 198178069}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1200058047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200058048}
+  - component: {fileID: 1200058050}
+  - component: {fileID: 1200058049}
+  m_Layer: 5
+  m_Name: GrenadeCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1200058048
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1200058047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 374623157}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -14.15, y: 10.45}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &1200058049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1200058047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 46238fb1ad7a7a84ba8954c1c860994c, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 230
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1200058050
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1200058047}
+  m_CullTransparentMesh: 0
 --- !u!1 &1225161609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,8 +4103,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114716316030017248, guid: d5031b2347cdfda4da096342b5398fa3, type: 2}
+    - target: {fileID: 114594439485563818, guid: d5031b2347cdfda4da096342b5398fa3,
+        type: 2}
+      propertyPath: grenadeCount
+      value: 
+      objectReference: {fileID: 1200058049}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5031b2347cdfda4da096342b5398fa3, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1900565955

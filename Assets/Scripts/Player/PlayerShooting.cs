@@ -25,6 +25,8 @@ public class PlayerShooting : MonoBehaviour
 
     public Material red, normal;
 
+    public Text grenadeCount;
+
     void Awake ()
     {
         shootableMask = LayerMask.GetMask ("Shootable");
@@ -64,6 +66,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void ThrowGrenade()
     {
+        grenadeCount.text = "0";
         hasGrenade = false;
         spawnedGrenade = Instantiate(grenadePrefab);
         spawnedGrenade.transform.position = transform.position;

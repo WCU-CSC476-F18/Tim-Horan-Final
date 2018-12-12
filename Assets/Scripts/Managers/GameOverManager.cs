@@ -10,9 +10,16 @@ public class GameOverManager : MonoBehaviour
     private GameObject[] spawns;
 
     public GameObject slomoPrefab, sniperPrefab, minigunPrefab;
+    private bool waves;
+    private int maxEnemies = 20;
+    public static bool play = true;
+    private float downTimer = 0;
+    public static int waveNumber = 1, enemiesLeft = 20;
 
     void Awake()
     {
+        waves = MainMenuController.waves;
+
         anim = GetComponent<Animator>();
 
         spawns = GameObject.FindGameObjectsWithTag("Powerup");
@@ -38,6 +45,30 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
+        if(waves)
+        {
+            if(EnemyManager.enemiesSpawned < maxEnemies)
+            {
+                play = true;
+            }
+            else
+            {
+                play = false;
+                if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                {
+                    downTimer += Time.deltaTime;
+                    if(downTimer >= 5)
+                    {
+                        play = true;
+                        EnemyManager.enemiesSpawned = 0;
+                        maxEnemies = (int) (maxEnemies * 1.75f);
+                        enemiesLeft = maxEnemies;
+                        downTimer = 0;
+                    }
+                }
+            }
+        }
+
         if (playerHealth.currentHealth <= 0)
         {
             gameOverText.SetActive(true);

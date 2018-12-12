@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GrenadeStore : MonoBehaviour
 {
     Text text;
+    public Text grenadeCount;
     // Use this for initialization
     void Start()
     {
@@ -29,6 +30,7 @@ public class GrenadeStore : MonoBehaviour
                 {
                     player.GetComponentInChildren<PlayerShooting>().hasGrenade = true;
                     ScoreManager.score -= 300;
+                    grenadeCount.text = "1";
                 }
                 else
                 {

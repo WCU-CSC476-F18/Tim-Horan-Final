@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4832568862728230}
   - component: {fileID: 54581345954375138}
   - component: {fileID: 136782063754548488}
-  - component: {fileID: 114716316030017248}
+  - component: {fileID: 114594439485563818}
   m_Layer: 0
   m_Name: Grenade Store
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1637822998261916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.64, y: 0.7, z: 0.53}
+  m_LocalPosition: {x: -9.8, y: 0.7, z: -7.85}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4650945668539030}
@@ -257,7 +257,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114716316030017248
+--- !u!114 &114594439485563818
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,9 +265,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1637822998261916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580e2419024d24c4abf327d82262ce3f, type: 3}
+  m_Script: {fileID: 11500000, guid: e6d25012ffb690a449ab373b82ec05dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grenadeCount: {fileID: 0}
 --- !u!136 &136782063754548488
 CapsuleCollider:
   m_ObjectHideFlags: 1

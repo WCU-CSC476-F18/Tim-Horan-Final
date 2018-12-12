@@ -7,6 +7,9 @@ public class EnemyManager : MonoBehaviour
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
 
+    private bool waves = MainMenuController.waves;
+    public static int enemiesSpawned = 0;
+
 
     void Start ()
     {
@@ -21,8 +24,17 @@ public class EnemyManager : MonoBehaviour
             return;
         }
 
-        int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+        if (!waves)
+        {
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
-        Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        }
+        else if(GameOverManager.play)
+        {
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            enemiesSpawned++;
+        }
     }
 }

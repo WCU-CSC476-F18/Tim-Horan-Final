@@ -73,6 +73,8 @@ public class EnemyHealth : MonoBehaviour
 
         isDead = true;
 
+        GameOverManager.enemiesLeft--;
+
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger ("Dead");

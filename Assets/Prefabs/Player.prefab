@@ -261,7 +261,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -428,10 +428,21 @@ MonoBehaviour:
   range: 100
   minigun: 0
   sniper: 0
+  slomo: 0
+  hasGrenade: 0
+  grenadeSpawned: 0
   sniperText: {fileID: 0}
   minigunText: {fileID: 0}
+  slomoText: {fileID: 0}
+  grenadePrefab: {fileID: 1669218690497920, guid: 417e6fd6b6ccd294f95eea4584fea38a,
+    type: 2}
+  spawnedGrenade: {fileID: 0}
   sniperSlider: {fileID: 0}
   minigunSlider: {fileID: 0}
+  slomoSlider: {fileID: 0}
+  red: {fileID: 2100000, guid: e735a2baaf6c7814dbbfb957a1e0de67, type: 2}
+  normal: {fileID: 2100000, guid: 007cd3dce0e6539409edcc484011c877, type: 2}
+  grenadeCount: {fileID: 0}
 --- !u!114 &114981717707784412
 MonoBehaviour:
   m_ObjectHideFlags: 1

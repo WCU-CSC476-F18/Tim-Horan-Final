@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 114547523185262392}
   m_Layer: 9
   m_Name: Hellephant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: fce027b40770a44298a6f5a4233bfb04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -33,7 +33,12 @@ public class EnemyMovement : MonoBehaviour
         {
             nav.speed = normalSpeed;
         }
-        if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+
+        if (barrel.GetComponent<PlayerShooting>().grenadeSpawned == true)
+        {
+            nav.SetDestination(barrel.GetComponent<PlayerShooting>().spawnedGrenade.transform.position);
+        }
+        else if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {
             nav.SetDestination (player.position);
         }

@@ -18,9 +18,9 @@ public class PlayerShooting : MonoBehaviour
     Light gunLight;
     float effectsDisplayTime = 0.2f;
 
-    public bool minigun = false, sniper = false, slomo = false;
+    public bool minigun = false, sniper = false, slomo = false, hasGrenade = true, grenadeSpawned = false;
 
-    public GameObject sniperText, minigunText, slomoText;
+    public GameObject sniperText, minigunText, slomoText, grenadePrefab, spawnedGrenade;
     public Slider sniperSlider, minigunSlider, slomoSlider;
 
     void Awake ()
@@ -49,12 +49,32 @@ public class PlayerShooting : MonoBehaviour
             Shoot ();
         }
 
+        if(Input.GetButton("Fire2") && hasGrenade)
+        {
+            ThrowGrenade();
+        }
+
         if(timer >= timeBetweenBullets * effectsDisplayTime)
         {
             DisableEffects ();
         }
     }
 
+    private void ThrowGrenade()
+    {
+        hasGrenade = false;
+        spawnedGrenade = Instantiate(grenadePrefab);
+        spawnedGrenade.transform.position = transform.position;
+        spawnedGrenade.transform.rotation = transform.rotation;
+        spawnedGrenade.GetComponent<Rigidbody>().velocity = transform.forward * 10;
+        grenadeSpawned = true;
+        Invoke("FocusPlayer", 3);
+    }
+
+    private void FocusPlayer()
+    {
+        grenadeSpawned = false;
+    }
 
     public void DisableEffects ()
     {

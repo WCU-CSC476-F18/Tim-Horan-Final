@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if(normalSpeed == -1)
                 normalSpeed = nav.speed;
-            nav.speed = normalSpeed / 3;
+            nav.speed = 0;
         }
         else if(normalSpeed != -1)
         {

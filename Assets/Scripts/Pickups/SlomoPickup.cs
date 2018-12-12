@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlomoPickup : MonoBehaviour {
 
-    private float timer = 15;
+    private float timer = 10;
     public Light bgLight;
 
     void Update()

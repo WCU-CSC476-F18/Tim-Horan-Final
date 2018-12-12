@@ -62,12 +62,13 @@ public class EnemyHealth : MonoBehaviour
     {
         if (this.name == "Hellephant(Clone)")
         {
+            int dropChance = Random.Range(1, 3);
             int rand = Random.Range(1, 4);
-            if (rand == 1)
+            if (rand == 1 && dropChance == 1)
                 Instantiate(slomoPrefab).transform.position = new Vector3(transform.position.x, 0.55f, transform.position.z);
-            else if (rand == 2)
+            else if (rand == 2 && dropChance == 1)
                 Instantiate(minigunPrefab).transform.position = new Vector3(transform.position.x, 0.55f, transform.position.z);
-            else
+            else if(rand == 3 && dropChance == 1)
                 Instantiate(sniperPrefab).transform.position = new Vector3(transform.position.x, 0.55f, transform.position.z);
         }
 

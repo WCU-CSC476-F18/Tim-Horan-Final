@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GrenadeStore : MonoBehaviour {
+public class GrenadeStore : MonoBehaviour
+{
     Text text;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         text = GameObject.Find("PickupHealthText").GetComponent<Text>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         this.transform.Rotate(new Vector3(0, 1, 0));
-	}
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -24,12 +27,8 @@ public class GrenadeStore : MonoBehaviour {
             {
                 if (ScoreManager.score >= 300)
                 {
-                    text.text = "Press E To Buy Grenade\nCost: 300 Points";
-                    if (Input.GetKeyUp(KeyCode.E))
-                    {
-                        player.GetComponentInChildren<PlayerShooting>().hasGrenade = true;
-                        ScoreManager.score -= 300;
-                    }
+                    player.GetComponentInChildren<PlayerShooting>().hasGrenade = true;
+                    ScoreManager.score -= 300;
                 }
                 else
                 {

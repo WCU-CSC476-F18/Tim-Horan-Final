@@ -24,12 +24,8 @@ public class HealthPickup : MonoBehaviour {
             {
                 if (ScoreManager.score >= 100)
                 {
-                    text.text = "Press E To Buy Health\nCost: 100 Points";
-                    if (Input.GetKeyUp(KeyCode.E))
-                    {
-                        player.GetComponent<PlayerHealth>().Heal();
-                        ScoreManager.score -= 100;
-                    }
+                    player.GetComponent<PlayerHealth>().Heal();
+                    ScoreManager.score -= 100;
                 }
                 else
                 {
@@ -38,7 +34,7 @@ public class HealthPickup : MonoBehaviour {
             }
             else
             {
-                text.text = "Cost: 100 Points";
+                text.text = "Already At Full Health\nCost: 100 Points";
             }
         }
     }

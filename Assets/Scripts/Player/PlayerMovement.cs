@@ -69,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     void showPaused()
     {
         foreach (GameObject g in pauseObjects)

@@ -1,5 +1,17 @@
 # Sleep Fright
 
+GitHub Repo
+---------------------------------------------------------
+https://github.com/WCU-CSC476-F18/Tim-Horan-Final
+
+WebGL Build
+---------------------------------------------------------
+Could not get one to build, kept getting an error:
+
+* FileNotFoundException: Could not find file "M:\Unity Projects\Survival Shooter\Temp\StagingArea\Data\Native\build.bc"
+
+I have included a standalone build in it's place
+
 Controls
 -----------------------------------------------------------
 * W-A-S-D to move

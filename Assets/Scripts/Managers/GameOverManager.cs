@@ -13,7 +13,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject slomoPrefab, sniperPrefab, minigunPrefab;
     private bool waves;
     private int maxEnemies = 20;
-    public static bool play = true;
+    public static bool play;
     private float downTimer = 5;
     public static int waveNumber = 1, enemiesLeft = 20;
 
@@ -24,6 +24,9 @@ public class GameOverManager : MonoBehaviour
     void Awake()
     {
         waves = MainMenuController.waves;
+        waveNumber = 1;
+        enemiesLeft = 20;
+        play = true;
 
         if(!waves)
         {

@@ -13,11 +13,12 @@ public class EndgameManager : MonoBehaviour {
 	void Start () {
 		if(MainMenuController.waves)
         {
+            waveNum = GameOverManager.waveNumber;
+            scoreDisplay.text = "You Made It To Wave " + waveNum;
             if (PlayerPrefs.HasKey("BestWave"))
             {
                 int highScore = PlayerPrefs.GetInt("BestWave");
-                waveNum = GameOverManager.waveNumber;
-                scoreDisplay.text = "You Made It To Wave " + waveNum;
+                
                 if (waveNum > highScore)
                 {
                     PlayerPrefs.SetInt("BestWave", waveNum);
@@ -36,11 +37,12 @@ public class EndgameManager : MonoBehaviour {
         }
         else
         {
+            score = ScoreManager.score;
+            scoreDisplay.text = "Your Total Score Was: " + score;
             if (PlayerPrefs.HasKey("BestScoreSS"))
             {
                 int highScore = PlayerPrefs.GetInt("BestScoreSS");
-                score = ScoreManager.score;
-                scoreDisplay.text = "Your Total Score Was: " + score;
+                
                 if (score > highScore)
                 {
                     PlayerPrefs.SetInt("BestScoreSS", score);

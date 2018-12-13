@@ -71,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void QuitToMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     void showPaused()

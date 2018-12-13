@@ -7,13 +7,15 @@ public class EnemyManager : MonoBehaviour
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
 
-    private bool waves = MainMenuController.waves;
-    public static int enemiesSpawned = 0;
+    private bool waves;
+    public static int enemiesSpawned;
 
 
     void Start ()
     {
         InvokeRepeating ("Spawn", spawnTime, spawnTime);
+        waves = MainMenuController.waves;
+        enemiesSpawned = 0;
     }
 
 
